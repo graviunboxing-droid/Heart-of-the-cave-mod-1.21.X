@@ -1,7 +1,7 @@
 {
   "variants": {
     "":{
-      "model": "CavesHeart:block/altar_activator_block"
+      "model": "cavesheart:block/altar_activator_block"
     }
   }
 }
