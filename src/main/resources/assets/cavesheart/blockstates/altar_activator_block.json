@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "":{
+      "model": "CavesHeart:block/altar_activator_block"
+    }
+  }
+}

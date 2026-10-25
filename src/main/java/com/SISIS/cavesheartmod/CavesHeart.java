@@ -1,5 +1,9 @@
 package com.SISIS.cavesheartmod;
 
+import com.SISIS.cavesheartmod.block.ModBlocks;
+import com.SISIS.cavesheartmod.item.ModCreativeModeTabs;
+import com.SISIS.cavesheartmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -33,6 +37,10 @@ public class CavesHeart {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        ModCreativeModeTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -45,7 +53,15 @@ public class CavesHeart {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS){
+            event.accept(ModItems.CAVEKILLERSFANG);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS){
+            event.accept(ModItems.BLOODBOTTLE);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS){
+            event.accept(ModBlocks.ALTAR_ACTIVATOR);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

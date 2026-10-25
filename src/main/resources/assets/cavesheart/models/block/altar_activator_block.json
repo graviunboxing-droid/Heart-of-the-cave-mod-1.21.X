@@ -1,0 +1,7 @@
+{
+  "parent"
+          ".": "minecraft:block/cube_all",
+  "textures"{
+  "all": "Cavesheart:block/altar_activator_block"
+}
+}
