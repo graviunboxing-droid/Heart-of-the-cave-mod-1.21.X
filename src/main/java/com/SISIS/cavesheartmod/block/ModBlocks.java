@@ -19,7 +19,7 @@ public static final DeferredRegister.Blocks BLOCKS =
         DeferredRegister.createBlocks(CavesHeart.MOD_ID);
 public static final DeferredBlock<Block> ALTAR_ACTIVATOR = registerBlock("altar_activator_block",
         ()->new Block(BlockBehaviour.Properties.of()
-                .strength(6f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)
+                .strength(4f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)
 
         ));
 private static<T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block){
